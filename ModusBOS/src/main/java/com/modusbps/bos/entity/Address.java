@@ -6,7 +6,14 @@ public class Address {
 	private String city;
 	private String code;
 	private String country;
+	private AddressType addressType;
 	
+	public AddressType getAddressType() {
+		return addressType;
+	}
+	public void setAddressType(AddressType addressType) {
+		this.addressType = addressType;
+	}
 	public String getAddressLine1() {
 		return addressLine1;
 	}
