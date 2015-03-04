@@ -29,7 +29,7 @@ public class IncomingCallPollJDBCTemplate implements IncomingCallPollDAO {
 
 	@Override
 	public void createIncomingCallPoll(IncomingCallPoll incomingCallPoll) {
-		String sql = "INSERT INTO incoming_call_poll(id,data,description,type,flag,datetime_stamp) VALUES (?,?,?,?,?,?)";
+		String sql = "INSERT INTO incoming_call_poll(id,data,description,type,flag,insert_datetime) VALUES (?,?,?,?,?,?)";
 
 		java.util.Date date = new Date();
 		Timestamp timestamp = new Timestamp(date.getTime());
