@@ -28,7 +28,6 @@
 		listener above (testMessageListener) 39: 4. concurrentConsumers - this is 
 		the number of threads that the DeafultMesaegListenerContainer will 40: spawn 
 		to handle incoming messages. The default is 1 but in our application we'll 
-<<<<<<< HEAD
 		have 2 separate 41: threads processing incoming messages. 42: <bean id="poiMessageListenerContainer" 
 		class="org.springframework.jms.listener.DefaultMessageListenerContainer"> 
 		<property name="connectionFactory" ref="mqConnectionFactory" /> <property 
@@ -42,18 +41,6 @@
 		the JMS template with the connection factory mentioned above 62: <bean id="jmsTemplate" 
 		class="org.springframework.jms.core.JmsTemplate"> <property name="connectionFactory" 
 		ref="mqConnectionFactory" /> </bean> -->
-	<bean id="poiMessageListenerContainer"
-		class="org.springframework.jms.listener.DefaultMessageListenerContainer">
-		<property name="connectionFactory" ref="mqConnectionFactory" />
-		<property name="destination" ref="InComingCallQueue" />
-		<property name="messageListener" ref="bosIncomingCallMessageListener" />
-		<property name="concurrentConsumers" value="2" />
-	</bean>
-	<!-- JMSTemplate is a Spring template that allows us to communicate with 
-		a message broker via JMS. JMSTemplate takes care of boiler plate code 
-		such as exception handling 60: and resource management such as connection 
-		pooling. This allows us concentrate on solving the 'business' 61: problem. 
-		We supply the JMS template with the connection factory mentioned above 62: -->
 
 	<!-- Initialization for data source -->
 	<bean id="dataSource"
