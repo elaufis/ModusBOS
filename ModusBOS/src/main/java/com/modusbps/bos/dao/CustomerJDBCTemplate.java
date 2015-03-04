@@ -22,7 +22,7 @@ public class CustomerJDBCTemplate implements CustomerDAO {
 	@Override
 	public Customer getCustomerByMSISDN(String msisdn) {
 		String sql = "SELECT * FROM Customer WHERE mobile_phone_number = ?";
-		jdbcTemplateObject.
+//		jdbcTemplateObject.
 		return null;
 	}
 

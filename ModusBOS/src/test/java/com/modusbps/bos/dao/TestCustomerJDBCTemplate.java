@@ -2,6 +2,7 @@ package com.modusbps.bos.dao;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,7 +15,7 @@ public class TestCustomerJDBCTemplate {
 	private CustomerJDBCTemplate customerJDBCTemplate;
 	private Customer customer;
 	
-	@Before
+	@Ignore
 	public void setUp() throws Exception {
 		 context = new ClassPathXmlApplicationContext("Spring-Module.xml");
 		 customerJDBCTemplate = (CustomerJDBCTemplate)context.getBean("customerJDBCTemplate");
@@ -25,7 +26,7 @@ public class TestCustomerJDBCTemplate {
 //		customerJDBCTemplate = (CustomerJDBCTemplate)context.getBean("customerJDBCTemplate");
 //	}
 	
-	@Test
+	@Ignore
 	public void testCreateCustomer() throws Exception {
 		customer = new Customer();
 		customer.setCustomerName("CLM");
