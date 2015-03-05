@@ -28,9 +28,9 @@ public class CustomerJDBCTemplate implements CustomerDAO {
 
 	@Override
 	public void createCustomer(Customer customer) {
-		String sql = "INSERT INTO Customer(cust_name, industry_type, office_phone_number, assigned_sales_rep) VALUES (?,?,?,?)";
+		String sql = "INSERT INTO Customer(cust_id, cust_name, category, office_phone_number) VALUES (?,?,?,?)";
 		
-		jdbcTemplateObject.update(sql, customer.getCustomerName(), customer.getIndustryType().getDescription(), customer.getOfficePhoneNumber(), customer.getAssignedSalesRep());
+		jdbcTemplateObject.update(sql, customer.getCustomerId(), customer.getCustomerName(), customer.getCategory(), customer.getOfficePhoneNumber());
 
 	}
 

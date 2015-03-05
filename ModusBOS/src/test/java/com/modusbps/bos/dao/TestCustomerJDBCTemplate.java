@@ -29,6 +29,7 @@ public class TestCustomerJDBCTemplate {
 	@Ignore
 	public void testCreateCustomer() throws Exception {
 		customer = new Customer();
+		customer.setCustomerId(5);
 		customer.setCustomerName("CLM");
 		customer.setAssignedSalesRep("LF");
 		customer.setIndustryType(IndustryType.BANKING);

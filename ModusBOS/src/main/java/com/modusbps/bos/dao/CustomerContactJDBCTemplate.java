@@ -26,7 +26,7 @@ public class CustomerContactJDBCTemplate implements CustomerContactDAO {
 
 	@Override
 	public void createCustomerContact(CustomerContact customerContact) {
-		String sql = "INSERT INTO customer_contact(cust_id,contact_first_name,contact_last_name,title,mobile_phone_number,email_address) VALUES (?,?,?,?,?,?)";
+		String sql = "INSERT INTO customer_contact(contact_id,cust_id,contact_first_name,contact_last_name,title,mobile_phone_number,email_address) VALUES (?,?,?,?,?,?)";
 		
 		jdbcTemplateObject.update(sql, customerContact.getCustomerId(), customerContact.getCustomerFirstName(), customerContact.getCustomerLastName(), customerContact.getTitle(), customerContact.getMobilePhoneNumber(), customerContact.getEmailAddress());
 

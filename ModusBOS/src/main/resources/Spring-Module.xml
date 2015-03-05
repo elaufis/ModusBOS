@@ -51,6 +51,21 @@
 		<property name="password" value="1q2w3e4r" />
 	</bean>
 
+	<bean id="crmDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://130.211.56.37:3306/fat_free_crm_development" />
+		<property name="username" value="root" />
+		<property name="password" value="1q2w3e4r" />
+	</bean>
+
+	<!-- Definition for CRM DAO template beans -->
+	<bean id="crmCustomerJDBCTemplate" class="com.modusbps.bos.crm.dao.CRMCustomerJDBCTemplate">
+		<property name="dataSource" ref="crmDataSource" />
+	</bean>
+
+
 	<!-- Definition for customerJDBCTemplate bean -->
 	<bean id="customerJDBCTemplate" class="com.modusbps.bos.dao.CustomerJDBCTemplate">
 		<property name="dataSource" ref="dataSource" />
@@ -59,11 +74,12 @@
 	<bean id="incomingCallPollJDBCTemplate" class="com.modusbps.bos.dao.IncomingCallPollJDBCTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	
+
 	<bean id="customerContactJDBCTemplate" class="com.modusbps.bos.dao.CustomerContactJDBCTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
+	<!-- JMS Connections -->
 	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory"
 		p:brokerURL="tcp://130.211.56.37:61616" />
 
@@ -78,10 +94,8 @@
 
 	<!-- This is the Spring DefaultMessageListenerContainer (DMLC). All default 
 		values for the DMLC are used except for concurrency; By default the DMLC 
-		knows to use the bean whose name is connectionFactory. 
-		
-		-->
+		knows to use the bean whose name is connectionFactory. -->
 	<jms:listener-container>
-	    <jms:listener destination="InComingCallQueue" ref="messageListener"/>
+		<jms:listener destination="InComingCallQueue" ref="messageListener" />
 	</jms:listener-container>
 </beans>

@@ -7,7 +7,14 @@ public class CustomerContact {
 	private String title;
 	private String mobilePhoneNumber;
 	private String emailAddress;
+	private int contactId;
 	
+	public int getContactId() {
+		return contactId;
+	}
+	public void setContactId(int contactId) {
+		this.contactId = contactId;
+	}
 	public int getCustomerId() {
 		return customerId;
 	}

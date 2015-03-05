@@ -9,7 +9,21 @@ public class Customer {
 	private String officePhoneNumber;
 	private String assignedSalesRep;
 	private String mobilePhoneNumber;
+	private String category;
+	private int customerId;
 	
+	public int getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 	public String getMobilePhoneNumber() {
 		return mobilePhoneNumber;
 	}
