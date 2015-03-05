@@ -59,6 +59,10 @@
 	<bean id="incomingCallPollJDBCTemplate" class="com.modusbps.bos.dao.IncomingCallPollJDBCTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	
+	<bean id="customerContactJDBCTemplate" class="com.modusbps.bos.dao.CustomerContactJDBCTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 
 	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory"
 		p:brokerURL="tcp://130.211.56.37:61616" />
